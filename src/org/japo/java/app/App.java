@@ -17,6 +17,8 @@ package org.japo.java.app;
 
 import java.util.Random;
 
+import org.japo.java.libraries.UtilesPrimitivos;
+
 /**
  *
  * @author Mario Merlos Abella - mario.merlos.alum@iescamp.es
@@ -46,7 +48,7 @@ public final class App {
         System.out.println("Mínimo ......: " + MIN);
         System.out.println("Máximo ......: " + MAX);
         System.out.println("---");
-        int informar = analizarRango(NUM, MAX, MIN);
+        int informar = UtilesPrimitivos.analizarRango(NUM, MAX, MIN);
         System.out.print("Análisis ....: ");
         switch (informar) {
             case 0:
@@ -60,19 +62,4 @@ public final class App {
                 break;
         }
     }
-
-    public static final int analizarRango(int num, int max, int min) {
-        int result = 0;
-
-        if (num >= min && num <= max) {
-            result = 0;
-        } else if (num <= min && num != min) {
-            result = 1;
-        } else if (num >= max && num != max) {
-            result = 2;
-        }
-        return result;
-
-    }
-
 }
